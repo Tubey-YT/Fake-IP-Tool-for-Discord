@@ -1,0 +1,82 @@
+@echo off
+Title Discord User to IP - Made by Tubey
+chcp 65001>nul
+color b
+:menu
+echo.
+echo		████████╗ ██████╗  ██████╗ ██╗     
+echo		╚══██╔══╝██╔═══██╗██╔═══██╗██║     
+echo		   ██║   ██║   ██║██║   ██║██║     
+echo		   ██║   ██║   ██║██║   ██║██║     
+echo		   ██║   ╚██████╔╝╚██████╔╝███████╗
+echo		   ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝
+echo.>nul
+ping localhost -n 5 >nul
+Echo Sup
+ping localhost -n 5 >nul
+echo>nul
+echo Press Enter To Go to User to Ip
+pause
+goto :cls
+:cls
+cls
+goto :menu2
+:menu2
+Title User-IP
+echo.
+Echo	  █    ██   ██████ ▓█████  ██▀███   ██▓ ██▓███  
+Echo	  ██  ▓██▒▒██    ▒ ▓█   ▀ ▓██ ▒ ██▒▓██▒▓██░  ██▒
+Echo	 ▓██  ▒██░░ ▓██▄   ▒███   ▓██ ░▄█ ▒▒██▒▓██░ ██▓▒
+Echo	 ▓▓█  ░██░  ▒   ██▒▒▓█  ▄ ▒██▀▀█▄  ░██░▒██▄█▓▒ ▒
+Echo	 ▒▒█████▓ ▒██████▒▒░▒████▒░██▓ ▒██▒░██░▒██▒ ░  ░
+Echo	 ░▒▓▒ ▒ ▒ ▒ ▒▓▒ ▒ ░░░ ▒░ ░░ ▒▓ ░▒▓░░▓  ▒▓▒░ ░  ░
+Echo	 ░░▒░ ░ ░ ░ ░▒  ░ ░ ░ ░  ░  ░▒ ░ ▒░ ▒ ░░▒ ░     
+Echo	  ░░░ ░ ░ ░  ░  ░     ░     ░░   ░  ▒ ░░░       
+Echo	    ░           ░     ░  ░   ░      ░                                                         
+echo.
+:IP
+set  /p input=^> %BS% Type Discord User:
+:question
+echo Did you meet the User in a Server^? (Y/N)
+set /p answer=
+
+if /i "%answer%"=="Y" (
+    echo You answered Yes!
+:loop
+cls
+echo ===================================
+echo            IP Address
+echo ===================================
+set /a part1=%random% %% 256
+set /a part2=%random% %% 256
+set /a part3=%random% %% 256
+set /a part4=%random% %% 256
+echo IP address is: %part1%.%part2%.%part3%.%part4%
+echo.
+pause
+goto loop
+) else if /i "%answer%"=="N" (
+    echo You answered No!
+:loop
+cls
+echo ===================================
+echo           IP Address 
+echo ===================================
+set /a part1=%random% %% 256
+set /a part2=%random% %% 256
+set /a part3=%random% %% 256
+set /a part4=%random% %% 256
+echo IP address is: %part1%.%part2%.%part3%.%part4%
+echo.
+pause
+goto loop
+
+) else (
+    echo Invalid input, please enter Y or N.
+    goto question
+)
+
+
+:end
+echo Exiting
+exit
